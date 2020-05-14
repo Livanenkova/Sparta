@@ -65,26 +65,27 @@ body {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 63%;
+  width: 72%;
   color: white;
+  text-align: center;
 }
 
 .main-nav__logo {
-	width: 33.33%;
+	width: 33%;
 
 }
 
 .main-nav__link {
-	width: 33.33%;
+
 	font-family: "CoreSansEBlack", "Arial", sans-serif;
 
 }
 
 .main-nav__subtitle{
-	width: 33.33%;
+	width: 33%;
 	background: url(../img/header_subtitle_blur.png) no-repeat;
 	letter-spacing: 9px;
 	font-size: 16px;
@@ -94,7 +95,7 @@ body {
 .main-nav__phone {
 	font-size: 18px;
 	letter-spacing: 1px;
-
+    width: 33%;
 }
 
 .start-home {
