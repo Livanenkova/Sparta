@@ -20,7 +20,7 @@ var uglify = require('gulp-uglify');
 var pipeline = require('readable-stream').pipeline;
 
 gulp.task("css", function () {
-  return gulp.src("sourse/sass/style.scss")
+  return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
@@ -43,7 +43,7 @@ gulp.task("sprite", function () {
 });
 
 gulp.task("html", function () {
-  return gulp.src("sourse/index.html")
+  return gulp.src("source/*.html")
     .pipe(posthtml([
       include()
     ]))
@@ -57,13 +57,13 @@ gulp.task("images", function() {
       imagemin.jpegtran({progressive: true}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("source/img"));
 });
 
 gulp.task("webp", function() {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp({quality:90}))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("source/img"));
 });
 
 gulp.task("minify", function() {
@@ -113,7 +113,7 @@ gulp.task("server", function () {
     ui: false
   });
 
-  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
+  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
@@ -124,33 +124,3 @@ gulp.task("refresh", function (done) {
 });
 
 gulp.task("start", gulp.series("build", "server"));
-
-// var gulp = require("gulp");
-// var plumber = require("gulp-plumber");
-// var sourcemap = require("gulp-sourcemaps");
-// var sass = require("gulp-sass");
-// var postcss = require("gulp-postcss");
-// var autoprefixer = require("autoprefixer");
-// var server = require("browser-sync").create(); 
-
-// gulp.task("css", function () {
-// return gulp.src("source/sass/style.scss")
-// .pipe(plumber())
-// .pipe(sourcemap.init())
-// .pipe(sass())
-// .pipe(postcss([ autoprefixer()]))
-// .pipe(sourcemap.write("."))
-// .pipe(gulp.dest("source/css"))
-// .pipe(server.stream());
-// });
-
-// gulp.task("server", function () {
-// server.init({
-// server: "source/",
-// notify: false, open: true,
-// cors: true, ui: false
-// });
-// gulp.watch("source/sass/**/*.{scss,sass} ", gulp.series("css"));
-// gulp.watch("source/*.html").on("change", server.reload);
-// });
-// gulp.task("start ", gulp.series("css", "server"));
