@@ -1,0 +1,105 @@
+/*header;*/
+
+.page-header__inner {
+  background: url(../img/Header_bg.png) no-repeat;
+  background-size: contain;
+  height: 800px;
+  width: 100%;
+}
+
+.page-header__top {
+  padding-top: 20px;
+  height: 120px;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 72%;
+  color: white;
+  text-align: center;
+}
+
+.main-nav__logo {
+  width: 33%;
+
+}
+
+.main-nav__link {
+
+  font-family: "CoreSansEBlack", "Arial", sans-serif;
+
+}
+
+.main-nav__subtitle{
+  width: 33%;
+  background: url(../img/header_subtitle_blur.png) no-repeat;
+  letter-spacing: 9px;
+  font-size: 16px;
+
+}
+
+.main-nav__phone {
+  font-size: 18px;
+  letter-spacing: 1px;
+  width: 33%;
+}
+
+.start-home {
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+.start-home__title {
+
+}
+
+.start-home__calendar {
+  height: 50px;
+  width: 200px;
+  background-image: url("../img/header_calendar_bg.png");
+  background-repeat: no-repeat;
+}
+
+.start-home__calendar-item {
+  color: black;
+  font-weight: bold;
+}
+
+.start-home__button {
+width: 300px;
+border: none;
+}
+
+.start-home__wrapper {
+  position: relative;
+  height: 100px;
+  width: 300px;
+}
+
+.start-home__button {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  display: block;
+  content: "";
+  padding: 5px;
+  width: 250px;
+  height: 46px;
+  background-color: transparent;
+  border: 1px solid #f2f2f2;
+  background-image: url("../img/adventure_layer1_tranquility.png");
+  background-size: auto;
+}
+
+
+.start-home__title {
+  font-weight: 900;
+  font-size: 68px;
+}
