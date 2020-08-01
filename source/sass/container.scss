@@ -1,0 +1,22 @@
+
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $white-color;
+  box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .container {
+    min-width: 768px;
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .container {
+    min-width: 1200px;
+    margin: auto;
+  }
+}
